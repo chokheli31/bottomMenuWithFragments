@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fragments.fragments.fragmentOne"
+        tools:layout="@layout/fragment_one"
+        android:label="fragmentOne">
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fragments.fragments.fragmentTwo"
+        tools:layout="@layout/fragment_two"
+        android:label="fragmentTwo" >
+
+        <argument android:name="amount"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+        <action
+            android:id="@+id/action_profileFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.fragments.fragments.fragmentThree"
+        tools:layout="@layout/fragment_three"
+        android:label="fragmentThree" />
+</navigation>
